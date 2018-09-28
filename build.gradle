@@ -1,0 +1,47 @@
+buildscript {
+	ext {
+		springBootVersion = '2.0.5.RELEASE'
+	}
+	repositories {
+		mavenCentral()
+	}
+	dependencies {
+		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+	}
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'io.spring.dependency-management'
+
+group = 'org.rm3l'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = 1.8
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	compile('org.springframework.boot:spring-boot-starter-data-jpa')
+	compile('org.springframework.boot:spring-boot-starter-data-rest')
+	compile('org.springframework.boot:spring-boot-starter-web')
+	compile('org.postgresql:postgresql:42.2.5')
+	testCompile('org.springframework.boot:spring-boot-starter-test')
+	testCompile('ru.yandex.qatools.embed:postgresql-embedded:2.9')
+}
+
+// The run task added by the application plugin
+// is also of type JavaExec.
+tasks.withType(JavaExec) {
+	// Assign all Java system properties from
+	// the command line to the JavaExec task.
+	systemProperties System.properties
+}
+
+test {
+	// Assign all Java system properties from
+	// the command line to the test task.
+	systemProperties System.properties
+}
