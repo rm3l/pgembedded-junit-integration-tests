@@ -4,10 +4,6 @@
 [![Coverage Status](https://coveralls.io/repos/github/rm3l/pgembedded-junit-integration-tests/badge.svg?branch=master)](https://coveralls.io/github/rm3l/pgembedded-junit-integration-tests?branch=master)
 [![License](https://img.shields.io/badge/license-MIT-green.svg?style=flat)](https://github.com/rm3l/pgembedded-junit-integration-tests/blob/master/LICENSE)
 
-[![GitHub watchers](https://img.shields.io/github/watchers/rm3l/pgembedded-junit-integration-tests.svg?style=social&label=Watch)](https://github.com/rm3l/pgembedded-junit-integration-tests)
-[![GitHub stars](https://img.shields.io/github/stars/rm3l/pgembedded-junit-integration-tests.svg?style=social&label=Star)](https://github.com/rm3l/pgembedded-junit-integration-tests)
-[![GitHub forks](https://img.shields.io/github/forks/rm3l/pgembedded-junit-integration-tests.svg?style=social&label=Fork)](https://github.com/rm3l/pgembedded-junit-integration-tests)
-
 Code for blog post: Running Java Integration Tests against a PostgreSQL Embedded database - https://rm3l.org/jvm-integration-tests-postgresql-embedded-database/
 
 # Motivations
