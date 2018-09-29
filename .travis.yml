@@ -15,6 +15,7 @@ cache:
 script:
   - echo "Travis branch is $TRAVIS_BRANCH, and is in pull request $TRAVIS_PULL_REQUEST"
   - ./gradlew build test --stacktrace -Dlogging.level.org.rm3l=TRACE
+  - ./gradlew jacocoTestReport
 
 notifications:
   email:

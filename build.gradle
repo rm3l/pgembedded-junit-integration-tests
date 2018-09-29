@@ -14,6 +14,7 @@ apply plugin: 'java'
 apply plugin: 'eclipse'
 apply plugin: 'org.springframework.boot'
 apply plugin: 'io.spring.dependency-management'
+apply plugin: 'jacoco'
 
 group = 'org.rm3l'
 version = '0.0.1-SNAPSHOT'
@@ -45,3 +46,12 @@ test {
 	// the command line to the test task.
 	systemProperties System.properties
 }
+
+jacocoTestReport {
+	reports {
+		xml.enabled true
+		html.enabled false
+	}
+}
+
+check.dependsOn jacocoTestReport
