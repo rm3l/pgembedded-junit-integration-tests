@@ -9,6 +9,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import java.util.Arrays;
 import java.util.UUID;
 
+import static org.hamcrest.Matchers.hasSize;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+
 public class PersonControllerTests extends AbstractIT {
 
     @Autowired
@@ -50,7 +55,12 @@ public class PersonControllerTests extends AbstractIT {
     }
 
     @Test
-    public void testGetMethod() {
+    public void testGetMethod() throws Exception {
         this.injectTestData();
+
+        this.mvc.perform(get("/Persons"))
+                .andExpect(status().isOk())
+                .andExpect(
+                        jsonPath("$._embedded.People", hasSize(5)));
     }
 }
