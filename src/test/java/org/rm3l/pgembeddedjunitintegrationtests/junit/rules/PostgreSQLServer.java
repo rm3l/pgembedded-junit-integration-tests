@@ -53,7 +53,7 @@ public class PostgreSQLServer extends ExternalResource {
                 postgres.start(
                         //Providing a cache dir to avoid extracting the archive at each JVM process run
                         cachedRuntimeConfig(
-                                Paths.get(System.getProperty("java.io.tmpdir"), ".postgresql-embedded")),
+                                Paths.get(System.getProperty("user.home"), ".local", "tmp", ".postgresql-embedded")),
                         "localhost", findFreePort(), TEST_DB, JDBC_USERNAME, JDBC_PASSWORD,
                         DEFAULT_ADD_PARAMS);
 
